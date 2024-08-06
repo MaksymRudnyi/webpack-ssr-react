@@ -1,18 +1,16 @@
 import React, {useState} from 'react';
-import './styles.scss'
+import { Route, Routes } from 'react-router-dom';
 
-function App () {
-  const [count, setCount] = useState(0)
+import UsersList from "./UsersList";
+import UserDetail from "./UserDetail";
+
+
+function App ({ users, userData}) {
   return (
-    <>
-      <div>
-        App
-      </div>
-      <p>
-        Count: {count}
-        <button onClick={() => setCount(count + 1)}>Increment</button>
-      </p>
-    </>
+    <Routes>
+      <Route path="/" element={<UsersList users={users} />} />
+      <Route path="/user/:userId" element={<UserDetail userData={userData} />} />
+    </Routes>
   )
 }
 
