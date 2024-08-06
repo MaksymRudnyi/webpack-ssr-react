@@ -72,6 +72,6 @@ app.get('*', async (req, res) => {
   res.send(finalHtml);
 });
 
-app.listen('9000', () => {
+app.listen('3000', () => {
   console.log('Server running on port 9000');
 });
