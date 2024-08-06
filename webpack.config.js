@@ -57,10 +57,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, options) => {
   return {
-    entry: options.mode === 'development' ? './src/index.dev.js' : './src/index.prod.js',
+    // entry: options.mode === 'development' ? './src/index.dev.js' : './src/index.prod.js',
+    entry: './src/index.dev.js' ,
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      publicPath: '/'
     },
     module: {
       rules: [
